@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TCU_CAR" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Set the background to white -->
+        <item name="android:windowBackground">@android:color/darker_gray</item>
+
+    </style>
+
+Be
+    <style name="Theme.TCU_CAR" parent="Base.Theme.TCU_CAR">
+
+
+    </style>
+
+    <style name="Theme.TCU_CAR.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.TCU_CAR.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.TCU_CAR.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

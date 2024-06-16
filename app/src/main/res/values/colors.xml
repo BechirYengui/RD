@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dark_mauve">#673AB7</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray">#A9A9A9</color>
+    <color name="light_gray">#D3D3D3</color>
+    <color name="edittext_default_color">#FF000000</color> <!-- Black -->
+    <color name="edittext_typed_color">#FF6200EE</color> <!-- Purple or any color -->
+    <color name="light_mauve">#a08fdb</color>
+
+</resources>

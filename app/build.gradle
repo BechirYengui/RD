@@ -1,0 +1,106 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.tcu_car"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    packagingOptions {
+        pickFirst 'META-INF/*.txt'
+        pickFirst 'META-INF/*.md'
+        pickFirst 'META-INF/*.LICENSE'
+        pickFirst 'META-INF/LICENSE*'
+        pickFirst 'META-INF/NOTICE*'
+        pickFirst 'META-INF/DEPENDENCIES'
+        pickFirst 'license/*.txt'
+        pickFirst 'license/*'
+        pickFirst 'google/protobuf/*.proto'
+        pickFirst 'META-INF/*.0'
+        pickFirst 'META-INF/*.1'
+        pickFirst 'META-INF/*.schemas'
+        pickFirst 'META-INF/*.tooling'
+        pickFirst 'META-INF/*.handlers'
+        pickFirst 'META-INF/*'
+        pickFirst 'mozilla/public-suffix-list.txt'
+    }
+
+    namespace "com.example.tcu_car"
+}
+
+repositories {
+    google()
+    mavenCentral()
+    maven {
+        url 'https://repo.thingsboard.io/artifactory/libs-release-public'
+    }
+}
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "com.google.android.material:material:1.12.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+    implementation "androidx.navigation:navigation-fragment:2.7.7"
+    implementation "androidx.navigation:navigation-ui:2.7.7"
+    implementation "androidx.annotation:annotation:1.8.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+    testImplementation "junit:junit:4.13.2"
+    androidTestImplementation "androidx.test.ext:junit:1.1.5"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
+    implementation "org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5"
+    implementation "org.eclipse.paho:org.eclipse.paho.android.service:1.1.1"
+    implementation "org.postgresql:postgresql:42.2.18"
+
+    // Exclude commons-logging from all dependencies
+    configurations {
+        all {
+            exclude group: 'commons-logging', module: 'commons-logging'
+        }
+    }
+
+    implementation ('org.springframework:spring-web:5.3.9') {
+        exclude group: 'org.springframework', module: 'spring-jcl'
+    }
+
+    implementation 'commons-io:commons-io:2.8.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.4'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.2'
+
+    implementation ('org.thingsboard:rest-client:3.6.4') {
+        exclude group: 'jakarta.annotation', module: 'jakarta.annotation-api'
+        exclude group: 'javax.annotation', module: 'javax.annotation-api'
+    }
+
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+
+    implementation ('org.springframework.boot:spring-boot-starter-web:2.5.4') {
+        exclude group: 'org.springframework', module: 'spring-jcl'
+    }
+
+    implementation 'com.auth0:java-jwt:3.18.2'
+}
